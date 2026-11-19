@@ -309,7 +309,7 @@ button { font: inherit; }
 @keyframes amanecerEntra { to { opacity: .9; } }
 
 .hero-bears, .hero-bunny {
-  position: absolute; bottom: -6px; opacity: 0; pointer-events: none;
+  position: absolute; bottom: -6px; opacity: 0; pointer-events: none; max-width: none;
   filter: drop-shadow(0 22px 20px rgba(74, 59, 87, .25));
 }
 .hero-bears { right: calc(100% + 36px); width: min(360px, 30vw); }
