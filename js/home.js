@@ -82,13 +82,6 @@ if (!VL.reduceMotion && window.gsap && window.ScrollTrigger) {
    JavaScript las arma a partir de los datos de data.js.
    ========================================================= */
 
-const sparkleSVG = (size) =>
-  `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>`;
-
-const petalSVG = (size, color, delay) =>
-  `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="${color}" style="animation-delay:${delay}s"><path d="M12 2C17 6 18 12 12 22C6 12 7 6 12 2z"/></svg>`;
-
-
 /* Arma el HTML de UN capítulo. Recibe la clave de la línea (ej. 'deco')
    y su posición, para alternar el lado de la vela. */
 function chapterHTML(key, index, keys) {
@@ -116,28 +109,11 @@ function chapterHTML(key, index, keys) {
       <!-- Escenario: arco + pedestal + vela -->
       <div class="stage reveal" id="stage-${key}">
         <div class="aura" style="background: radial-gradient(circle, ${line.glow} 0%, rgba(255,255,255,0) 66%)" aria-hidden="true"></div>
-        <span class="petal" style="left:2%; top:12%" aria-hidden="true">${petalSVG(34, line.petal, 0)}</span>
-        <span class="petal" style="right:4%; top:20%" aria-hidden="true">${petalSVG(22, line.petal, -2)}</span>
-        <span class="petal" style="right:10%; bottom:18%" aria-hidden="true">${petalSVG(26, line.petal, -5)}</span>
+        <span class="petal" style="left:2%; top:12%" aria-hidden="true">${VL.icons.petal(34, line.petal, 0)}</span>
+        <span class="petal" style="right:4%; top:20%" aria-hidden="true">${VL.icons.petal(22, line.petal, -2)}</span>
+        <span class="petal" style="right:10%; bottom:18%" aria-hidden="true">${VL.icons.petal(26, line.petal, -5)}</span>
 
-        <div class="scene">
-          <div class="arch" style="background: linear-gradient(180deg, #FFFFFF 0%, ${line.glow} 30%, ${line.accent} 100%)" aria-hidden="true"></div>
-          <span class="sparkle" style="left:16%; top:14%; animation-delay:-1s" aria-hidden="true">${sparkleSVG(16)}</span>
-          <span class="sparkle" style="right:18%; top:24%; animation-delay:-2.2s" aria-hidden="true">${sparkleSVG(11)}</span>
-          <span class="sparkle" style="left:24%; top:48%; animation-delay:-.4s" aria-hidden="true">${sparkleSVG(9)}</span>
-
-          <div class="podium" aria-hidden="true">
-            <div class="podium-body" style="background: linear-gradient(90deg, ${line.accent} 0%, #FFFFFF 46%, ${line.accent} 100%)"></div>
-            <div class="podium-top" style="background: radial-gradient(ellipse at 50% 35%, #FFFFFF 0%, ${line.glow} 55%, ${line.accent} 100%)"></div>
-            <div class="podium-shadow"></div>
-          </div>
-
-          <div class="product-wrap">
-            <a class="product-link" href="producto.html?id=${first.id}" aria-label="Ver detalle de ${first.name}">
-              <img class="product-img" src="${first.img}" alt="${first.name}" width="${first.w}" height="${first.h}" loading="lazy">
-            </a>
-          </div>
-        </div>
+        ${VL.sceneHTML(first, line)}
 
         <span class="zoom-hint" aria-hidden="true">Toca la vela para ver el detalle</span>
       </div>

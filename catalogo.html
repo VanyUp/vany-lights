@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo · Vany Lights</title>
+  <meta name="description" content="Todas las velas artesanales de Vany Lights: decorativas, aromáticas, wax melts y recuerdos.">
+  <meta name="theme-color" content="#261C33">
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Enlace para saltar el menú con el teclado (accesibilidad) -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Vany Lights, inicio">
+      <span class="brand-vany">Vany</span>
+      <span class="brand-lights">Lights</span>
+    </a>
+
+    <!-- Botón de menú: solo se ve en celular -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="nav-links" id="menu">
+        <li><a class="nav-link" href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+        <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li>
+          <a class="cart-link" href="carrito.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Carrito
+            <span class="badge" data-cart-count aria-label="productos en el carrito">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- Cabecera de la página -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Catálogo</p>
+        <h1 class="titulo">Elige tu <span class="script">luz</span></h1>
+        <p class="lead">Todas nuestras velas, hechas a mano una por una. Filtra por línea y toca una vela para ver su detalle.</p>
+      </div>
+    </section>
+
+    <section class="container" aria-label="Productos">
+      <!-- Filtros: catalogo.js marca el activo con aria-pressed -->
+      <div class="chips" role="group" aria-label="Filtrar por línea">
+        <button class="chip" type="button" data-filter="todas" aria-pressed="true">Todas</button>
+        <button class="chip" type="button" data-filter="deco" aria-pressed="false">Decorativas</button>
+        <button class="chip" type="button" data-filter="aroma" aria-pressed="false">Aromáticas</button>
+        <button class="chip" type="button" data-filter="wax" aria-pressed="false">Wax melts</button>
+        <button class="chip" type="button" data-filter="rec" aria-pressed="false">Recuerdos</button>
+      </div>
+
+      <!-- Aquí catalogo.js inserta las tarjetas -->
+      <p class="sr-only" aria-live="polite" id="resultado"></p>
+      <div class="grid-products" id="grid"></div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="eyebrow">¿Una vela especial para alguien?</p>
+      <h2 class="footer-title">Escríbenos</h2>
+      <p>Hacemos recuerdos personalizados para cumpleaños, baby showers y celebraciones. Envíos nacionales desde Bogotá.</p>
+      <div class="footer-actions">
+        <a class="btn btn-rosa" href="https://wa.me/573222224048" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline-light" href="https://www.instagram.com/vany.lights/" target="_blank" rel="noopener">Instagram @vany.lights</a>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito</a>
+      </nav>
+      <p class="footer-small">© Vany Lights · Velas artesanales hechas a mano · Fotos propias</p>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

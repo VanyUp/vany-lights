@@ -214,6 +214,59 @@ VL.initTilt = function (stage, maxDeg = 14) {
 };
 
 
+/* ---------- 10. Piezas de HTML reutilizables ----------
+   Funciones que devuelven HTML como texto. Las usan varias páginas,
+   así no repetimos el mismo código en cada archivo. */
+
+VL.icons = {
+  sparkle: (size) =>
+    `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>`,
+  petal: (size, color, delay = 0) =>
+    `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="${color}" style="animation-delay:${delay}s"><path d="M12 2C17 6 18 12 12 22C6 12 7 6 12 2z"/></svg>`,
+  plus: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>'
+};
+
+/* La escena 3D: arco + destellos + pedestal + vela.
+   Si link es true, la vela es un enlace a su página de detalle. */
+VL.sceneHTML = function (p, line, { link = true, lazy = true } = {}) {
+  const img = `<img class="product-img" src="${p.img}" alt="${p.name}" width="${p.w}" height="${p.h}"${lazy ? ' loading="lazy"' : ''}>`;
+  return `
+    <div class="scene">
+      <div class="arch" style="background: linear-gradient(180deg, #FFFFFF 0%, ${line.glow} 30%, ${line.accent} 100%)" aria-hidden="true"></div>
+      <span class="sparkle" style="left:16%; top:14%; animation-delay:-1s" aria-hidden="true">${VL.icons.sparkle(16)}</span>
+      <span class="sparkle" style="right:18%; top:24%; animation-delay:-2.2s" aria-hidden="true">${VL.icons.sparkle(11)}</span>
+      <span class="sparkle" style="left:24%; top:48%; animation-delay:-.4s" aria-hidden="true">${VL.icons.sparkle(9)}</span>
+      <div class="podium" aria-hidden="true">
+        <div class="podium-body" style="background: linear-gradient(90deg, ${line.accent} 0%, #FFFFFF 46%, ${line.accent} 100%)"></div>
+        <div class="podium-top" style="background: radial-gradient(ellipse at 50% 35%, #FFFFFF 0%, ${line.glow} 55%, ${line.accent} 100%)"></div>
+        <div class="podium-shadow"></div>
+      </div>
+      <div class="product-wrap">
+        ${link ? `<a class="product-link" href="producto.html?id=${p.id}" aria-label="Ver detalle de ${p.name}">${img}</a>` : img}
+      </div>
+    </div>`;
+};
+
+/* Tarjeta de producto para el catálogo y "también te puede gustar".
+   El índice i escalona la animación de entrada. */
+VL.tileHTML = function (p, i = 0) {
+  const line = VL.LINES[p.line];
+  return `
+    <article class="tile" style="background:${line.bg}; animation: tarjetaEntra .7s ${(i * 0.07).toFixed(2)}s backwards">
+      <a class="tile-link" href="producto.html?id=${p.id}" aria-label="Ver detalle de ${p.name}"></a>
+      <img class="tile-img" src="${p.img}" alt="" width="${p.w}" height="${p.h}" loading="lazy">
+      <div class="tile-info">
+        <div>
+          <span class="tile-line">${line.name}</span>
+          <h3><a href="producto.html?id=${p.id}">${p.name}</a></h3>
+          <span class="price">${VL.formatPrice(p.price)}</span>
+        </div>
+        <button class="mini" type="button" data-add="${p.id}" data-name="${p.name}" aria-label="Agregar ${p.name} al carrito">${VL.icons.plus}</button>
+      </div>
+    </article>`;
+};
+
+
 /* ---------- Al cargar la página ---------- */
 VL.updateBadge();
 VL.observeReveals();

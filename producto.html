@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalle de vela · Vany Lights</title>
+  <meta name="description" content="Detalle de una vela artesanal de Vany Lights.">
+  <meta name="theme-color" content="#261C33">
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Enlace para saltar el menú con el teclado (accesibilidad) -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Vany Lights, inicio">
+      <span class="brand-vany">Vany</span>
+      <span class="brand-lights">Lights</span>
+    </a>
+
+    <!-- Botón de menú: solo se ve en celular -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="nav-links" id="menu">
+        <li><a class="nav-link" href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+        <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li>
+          <a class="cart-link" href="carrito.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Carrito
+            <span class="badge" data-cart-count aria-label="productos en el carrito">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- producto.js llena esta sección con la vela elegida -->
+    <div class="container" id="detalle"></div>
+
+    <section class="container related" aria-labelledby="titulo-relacionados">
+      <h2 class="titulo" id="titulo-relacionados" style="font-size: clamp(36px, 4vw, 54px)">También te puede <span class="script">gustar</span></h2>
+      <div class="grid-products" id="relacionados" style="padding-bottom: 0"></div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="eyebrow">¿Una vela especial para alguien?</p>
+      <h2 class="footer-title">Escríbenos</h2>
+      <p>Hacemos recuerdos personalizados para cumpleaños, baby showers y celebraciones. Envíos nacionales desde Bogotá.</p>
+      <div class="footer-actions">
+        <a class="btn btn-rosa" href="https://wa.me/573222224048" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline-light" href="https://www.instagram.com/vany.lights/" target="_blank" rel="noopener">Instagram @vany.lights</a>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito</a>
+      </nav>
+      <p class="footer-small">© Vany Lights · Velas artesanales hechas a mano · Fotos propias</p>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/producto.js"></script>
+</body>
+</html>
