@@ -73,22 +73,60 @@
         <div class="msg msg2">
           <p class="eyebrow">Vany Lights</p>
           <h2 class="big big-2">Hechas a mano,<br><span class="script" style="color: #8C5FA8">hechas con amor</span></h2>
-          <a class="btn btn-dark" href="#colecciones">Descubre las colecciones</a>
+          <!-- Accesos directos a cada línea (capítulos de abajo) -->
+          <nav class="hero-chips" aria-label="Nuestras líneas">
+            <a class="hero-chip" href="#deco"><i style="background: #F4C2D2"></i>Decorativas</a>
+            <a class="hero-chip" href="#aroma"><i style="background: #BFE3CB"></i>Aromáticas</a>
+            <a class="hero-chip" href="#wax"><i style="background: #D2C3EE"></i>Wax melts</a>
+            <a class="hero-chip" href="#rec"><i style="background: #BFD8EF"></i>Recuerdos</a>
+          </nav>
         </div>
       </div>
 
       <!-- La vela (decorativa: aria-hidden) -->
       <div class="base" aria-hidden="true">
-        <img class="hero-bears" src="assets/img/ositos-canasta.webp" alt="" width="900" height="479">
-        <img class="hero-bunny" src="assets/img/conejita.webp" alt="" width="593" height="900">
+
+        <!-- Arco de línea fina: GSAP lo "dibuja" después del amanecer -->
+        <svg class="hero-arch" viewBox="0 0 280 340" fill="none">
+          <defs>
+            <linearGradient id="lineaArco" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#D9B87A"/>
+              <stop offset="1" stop-color="#B79BE0"/>
+            </linearGradient>
+          </defs>
+          <path class="arch-line" d="M8 340 V140 A132 132 0 0 1 272 140 V340" stroke="url(#lineaArco)" stroke-width="1.6"/>
+          <path class="arch-line" d="M22 340 V143 A118 118 0 0 1 258 143 V340" stroke="url(#lineaArco)" stroke-width=".8" opacity=".55"/>
+        </svg>
+
+        <!-- Destellos y pétalos que aparecen con la luz -->
+        <div class="hero-deco">
+          <span class="sparkle" style="left: -70px; top: -40px; animation-delay: -.6s"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D9B87A"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+          <span class="sparkle" style="right: -84px; top: 10px; animation-delay: -1.8s"><svg width="13" height="13" viewBox="0 0 24 24" fill="#B79BE0"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+          <span class="sparkle" style="left: -96px; top: 110px; animation-delay: -2.6s"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F09AB5"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+          <span class="sparkle" style="right: -60px; top: -96px; animation-delay: -1s"><svg width="10" height="10" viewBox="0 0 24 24" fill="#D9B87A"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+          <span class="hero-petal" style="left: -150px; top: -10px"><svg width="26" height="26" viewBox="0 0 24 24" fill="#F4C2D2"><path d="M12 2C17 6 18 12 12 22C6 12 7 6 12 2z"/></svg></span>
+          <span class="hero-petal" style="right: -160px; top: 60px; animation-delay: -3s"><svg width="20" height="20" viewBox="0 0 24 24" fill="#D2C3EE"><path d="M12 2C17 6 18 12 12 22C6 12 7 6 12 2z"/></svg></span>
+          <span class="hero-petal" style="left: -130px; top: 150px; animation-delay: -5s"><svg width="16" height="16" viewBox="0 0 24 24" fill="#BFE3CB"><path d="M12 2C17 6 18 12 12 22C6 12 7 6 12 2z"/></svg></span>
+        </div>
+
+        <!-- Pedestal pequeño -->
+        <div class="hero-podium"><div class="hp-body"></div><div class="hp-top"></div></div>
+
         <div class="candle">
           <div class="dawn"></div>
           <div class="halo"></div>
           <div class="spark"></div>
-          <div class="flamebox"><div class="flame"></div><div class="flame-core"></div></div>
+          <div class="flamebox">
+            <div class="flame-glow"></div>
+            <div class="flame"></div>
+            <div class="flame-core"></div>
+          </div>
           <div class="wick"></div>
           <div class="cbody">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9B7BB8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+            <div class="wax-glow"></div>
+            <span class="drip drip-1"></span>
+            <span class="drip drip-2"></span>
+            <div class="band"><span>Vany Lights</span></div>
           </div>
         </div>
       </div>

@@ -36,6 +36,19 @@ if (!VL.reduceMotion && window.gsap && window.ScrollTrigger) {
      - end: '+=130%' → termina después de bajar 1.3 pantallas
      - pin: true → el hero se queda fijo mientras dura la animación
      - scrub: 1 → la animación sigue al scroll con 1 segundo de suavizado */
+  /* El arco se "dibuja": su línea punteada tiene un solo trazo tan largo
+     como el arco (dasharray) y empieza corrida (dashoffset) para que no se vea.
+     Al animar el dashoffset a 0, la línea aparece como si se trazara a mano. */
+  const archLines = document.querySelectorAll('.arch-line');
+  archLines.forEach((line) => {
+    const length = line.getTotalLength();
+    line.style.strokeDasharray = length;
+    line.style.strokeDashoffset = length;
+  });
+
+  // La luz aparece suave cuando la llama se enciende (al cargar, no con el scroll)
+  gsap.to('.dawn', { opacity: 0.6, duration: 1.6, delay: 1.1, ease: 'power2.out' });
+
   const amanecer = gsap.timeline({
     scrollTrigger: {
       trigger: '.hero',
@@ -54,6 +67,7 @@ if (!VL.reduceMotion && window.gsap && window.ScrollTrigger) {
 
     // La luz nace en la llama y crece hasta llenar la pantalla
     .to('.dawn', { scale: 12, ease: 'power1.in', duration: 1 }, 0)
+    .to('.dawn', { opacity: 1, duration: 0.3 }, 0)
 
     // El primer mensaje se va hacia arriba y se desenfoca
     .to('.msg1', { opacity: 0, y: -60, filter: 'blur(6px)', duration: 0.4 }, 0.05)
@@ -61,18 +75,16 @@ if (!VL.reduceMotion && window.gsap && window.ScrollTrigger) {
     // El cielo de noche se apaga
     .to('.night', { opacity: 0, duration: 0.6 }, 0.2)
 
-    // Llega el segundo mensaje
+    // Llega el segundo mensaje (autoAlpha = opacidad + visibilidad, así sus enlaces no se pueden tocar mientras está oculto)
     .fromTo('.msg2',
-      { opacity: 0, y: 50, filter: 'blur(8px)' },
-      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.4 }, 0.55)
+      { autoAlpha: 0, y: 50, filter: 'blur(8px)' },
+      { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.4 }, 0.55)
 
-    // Suben los ositos y la conejita, un poquito desfasados
-    .fromTo('.hero-bears',
-      { opacity: 0, y: 160, rotation: -10 },
-      { opacity: 1, y: 0, rotation: -3, duration: 0.4 }, 0.65)
-    .fromTo('.hero-bunny',
-      { opacity: 0, y: 160, rotation: 10 },
-      { opacity: 1, y: 0, rotation: 4, duration: 0.4 }, 0.72);
+    // Se dibuja el arco alrededor de la vela
+    .to(archLines, { strokeDashoffset: 0, ease: 'power2.inOut', duration: 0.45, stagger: 0.08 }, 0.5)
+
+    // Aparecen los destellos y los pétalos
+    .fromTo('.hero-deco', { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.35 }, 0.7);
 }
 
 
