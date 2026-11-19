@@ -1,0 +1,26 @@
+:root {
+  --lavanda: #9B7BB8;
+  --ciruela: #4A3B57;
+  --deco: #F9DCE5;   /* rosa de Decorativas */
+}
+
+.grid-products { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+
+@keyframes parpadeo {
+  0%, 100% { transform: none; }
+  37%      { transform: scale(1.04, .96) skewX(1.5deg); }
+}
+.flame { animation: parpadeo 2.6s ease-in-out infinite; }
+
+.stage { perspective: 1200px; }
+.scene { transform-style: preserve-3d; }
+.arch  { transform: translateZ(-70px); }   /* atrás */
+.product-wrap { transform: translateZ(60px); }   /* adelante */
+
+
+@media (max-width: 860px) { .nav-toggle { display: inline-flex; } }
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+}
