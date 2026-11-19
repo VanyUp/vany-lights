@@ -520,6 +520,8 @@ button { font: inherit; }
   transition: transform .5s var(--ease), box-shadow .5s;
 }
 .tile:hover { transform: translateY(-8px); box-shadow: var(--sombra-fuerte); }
+/* Entrada escalonada: "backwards" solo aplica antes de empezar, así no bloquea el hover */
+@keyframes tarjetaEntra { from { opacity: 0; transform: translateY(30px) scale(.97); } }
 .tile-link { position: absolute; inset: 0 0 110px 0; border-radius: 30px 30px 0 0; }
 .tile-img {
   position: absolute; left: 50%; top: 26px; max-width: 72%; max-height: 200px; width: auto;
@@ -574,7 +576,6 @@ button { font: inherit; }
 .cart-item {
   display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding: 16px 20px 16px 16px;
   border-radius: 26px; background: var(--blanco); box-shadow: var(--sombra);
-  animation: aparecer .5s var(--ease) both;
 }
 .cart-thumb { width: 92px; height: 92px; border-radius: 20px; display: flex; align-items: center; justify-content: center; padding: 8px; }
 .cart-thumb img { max-height: 100%; }
