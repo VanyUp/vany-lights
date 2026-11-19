@@ -181,6 +181,39 @@ VL.observeReveals = function (root = document) {
 };
 
 
+/* ---------- 9. Inclinación 3D con el mouse ----------
+   Calcula dónde está el mouse dentro del escenario (de 0 a 1)
+   y lo convierte en grados de giro para .scene.
+   requestAnimationFrame limita los cálculos a uno por cuadro de pantalla,
+   así el efecto es fluido y no recarga el navegador. */
+VL.initTilt = function (stage, maxDeg = 14) {
+  const scene = stage.querySelector('.scene');
+  const canHover = window.matchMedia('(hover: hover)').matches;   // no en celulares
+  if (!scene || VL.reduceMotion || !canHover) return;
+
+  let frame = null;
+
+  stage.addEventListener('mousemove', (event) => {
+    const box = stage.getBoundingClientRect();
+    const x = (event.clientX - box.left) / box.width;   // 0 = izquierda, 1 = derecha
+    const y = (event.clientY - box.top) / box.height;   // 0 = arriba, 1 = abajo
+
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => {
+      scene.classList.add('is-tilting');
+      scene.style.transform =
+        `rotateX(${((0.5 - y) * maxDeg).toFixed(2)}deg) rotateY(${((x - 0.5) * maxDeg).toFixed(2)}deg)`;
+    });
+  });
+
+  stage.addEventListener('mouseleave', () => {
+    cancelAnimationFrame(frame);
+    scene.classList.remove('is-tilting');   // vuelve despacio a su lugar
+    scene.style.transform = '';
+  });
+};
+
+
 /* ---------- Al cargar la página ---------- */
 VL.updateBadge();
 VL.observeReveals();
