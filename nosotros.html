@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nosotros · Vany Lights</title>
+  <meta name="description" content="La historia de Vany Lights: velas artesanales hechas a mano en Bogotá, una por una.">
+  <meta name="theme-color" content="#261C33">
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Enlace para saltar el menú con el teclado (accesibilidad) -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Vany Lights, inicio">
+      <span class="brand-vany">Vany</span>
+      <span class="brand-lights">Lights</span>
+    </a>
+
+    <!-- Botón de menú: solo se ve en celular -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="nav-links" id="menu">
+        <li><a class="nav-link" href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+        <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li>
+          <a class="cart-link" href="carrito.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Carrito
+            <span class="badge" data-cart-count aria-label="productos en el carrito">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Nosotros</p>
+        <h1 class="titulo">Hechas a mano, <span class="script">hechas con amor</span></h1>
+      </div>
+    </section>
+
+    <!-- Historia -->
+    <section class="container about-intro" aria-label="Nuestra historia">
+      <div class="text reveal">
+        <p><strong>Vany Lights</strong> nace en Bogotá de las manos de Vanesa, que convirtió su gusto por los detalles en velas que se pueden regalar, encender y guardar.</p>
+        <p>Cada vela se hace una por una: se derrite la cera, se elige el color y el aroma, se moldea y se termina a mano con moños, flores y tarjetas.</p>
+        <p>Por eso ninguna es exactamente igual a otra. Hacemos velas decorativas, aromáticas, wax melts para pebetero y recuerdos personalizados para tus celebraciones, con envíos a todo Colombia.</p>
+        <a class="btn btn-dark" href="catalogo.html" style="align-self: flex-start">Ver el catálogo</a>
+      </div>
+      <!-- nosotros.js pone aquí el pedestal con una vela -->
+      <div class="about-art stage reveal" id="about-art" style="height: 600px"></div>
+    </section>
+
+    <!-- Proceso: franja horizontal -->
+    <section class="process" aria-labelledby="titulo-proceso">
+      <div class="process-pin">
+        <div class="track-wrap">
+          <div class="track">
+            <div class="step step-intro">
+              <div style="display: flex; flex-direction: column; gap: 16px">
+                <p class="eyebrow">Hecho a mano</p>
+                <h2 class="titulo" id="titulo-proceso">Así nace <span class="script">cada vela</span></h2>
+                <p style="margin: 0; font-size: 18px; color: var(--texto-suave); max-width: 400px">Ninguna sale de una fábrica. Cada pieza pasa por las manos de Vany, paso a paso.</p>
+              </div>
+              <span class="eyebrow">Sigue bajando →</span>
+            </div>
+            <article class="step" style="background: #F9DCE5">
+              <img src="assets/img/corazones.webp" alt="" loading="lazy" width="400" height="400">
+              <span class="step-n" style="color: #A8456E" aria-hidden="true">1</span>
+              <div>
+                <h3><span class="sr-only">Paso 1: </span>Derretir</h3>
+                <p>La cera se derrite despacio, a baja temperatura, para que quede lisa y uniforme.</p>
+              </div>
+            </article>
+            <article class="step" style="background: #DDF0E4">
+              <img src="assets/img/trio.webp" alt="" loading="lazy" width="400" height="400">
+              <span class="step-n" style="color: #2F7350" aria-hidden="true">2</span>
+              <div>
+                <h3><span class="sr-only">Paso 2: </span>Color y aroma</h3>
+                <p>Cada línea tiene sus tonos pastel y su fragancia, elegidos para que combinen.</p>
+              </div>
+            </article>
+            <article class="step" style="background: #E7DEF5">
+              <img src="assets/img/osito-rosa.webp" alt="" loading="lazy" width="400" height="400">
+              <span class="step-n" style="color: #6B48A0" aria-hidden="true">3</span>
+              <div>
+                <h3><span class="sr-only">Paso 3: </span>Moldear</h3>
+                <p>Ositos, flores y corazones toman forma en su molde, uno por uno.</p>
+              </div>
+            </article>
+            <article class="step" style="background: #DCEAF7">
+              <img src="assets/img/recuerdo-tarjeta.webp" alt="" loading="lazy" width="400" height="400">
+              <span class="step-n" style="color: #2F5F92" aria-hidden="true">4</span>
+              <div>
+                <h3><span class="sr-only">Paso 4: </span>Detallar y empacar</h3>
+                <p>Moños, tarjetas y empaque, con el cariño de un regalo hecho a mano.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="container" aria-labelledby="titulo-valores" style="padding-top: 40px">
+      <h2 class="titulo" id="titulo-valores" style="margin-bottom: 32px; font-size: clamp(36px, 4vw, 54px)">Lo que nos <span class="script">ilumina</span></h2>
+      <div class="values">
+        <article class="value-card reveal" style="background: var(--deco)"><h3>Hechas a mano</h3><p>Cada vela se moldea y se termina una por una.</p></article>
+        <article class="value-card reveal" style="background: var(--aroma)"><h3>Hechas con amor</h3><p>Cuidamos cada detalle, del color al empaque.</p></article>
+        <article class="value-card reveal" style="background: var(--wax)"><h3>Para regalar</h3><p>Pensadas para sorprender y celebrar momentos.</p></article>
+        <article class="value-card reveal" style="background: var(--rec)"><h3>Envíos nacionales</h3><p>Desde Bogotá a cualquier ciudad de Colombia.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="eyebrow">¿Una vela especial para alguien?</p>
+      <h2 class="footer-title">Escríbenos</h2>
+      <p>Hacemos recuerdos personalizados para cumpleaños, baby showers y celebraciones. Envíos nacionales desde Bogotá.</p>
+      <div class="footer-actions">
+        <a class="btn btn-rosa" href="https://wa.me/573222224048" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline-light" href="https://www.instagram.com/vany.lights/" target="_blank" rel="noopener">Instagram @vany.lights</a>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito</a>
+      </nav>
+      <p class="footer-small">© Vany Lights · Velas artesanales hechas a mano · Fotos propias</p>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nosotros.js"></script>
+</body>
+</html>
