@@ -47,7 +47,7 @@ if (!VL.reduceMotion && window.gsap && window.ScrollTrigger) {
   });
 
   // La luz aparece suave cuando la llama se enciende (al cargar, no con el scroll)
-  gsap.to('.dawn', { opacity: 0.6, duration: 1.6, delay: 1.1, ease: 'power2.out' });
+  gsap.to('.dawn', { opacity: 0.6, duration: 1.6, delay: 2.4, ease: 'power2.out' });
 
   const amanecer = gsap.timeline({
     scrollTrigger: {

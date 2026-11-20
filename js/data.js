@@ -46,11 +46,11 @@ VL.LINES = {
    Reemplázalos por los precios reales de Vany Lights (en pesos colombianos). */
 VL.PRODUCTS = [
   { id: 'osito-rosa', line: 'deco', name: 'Osito en canasta rosa', price: 25000,
-    img: 'assets/img/osito-rosa.webp', w: 689, h: 900,
+    img: 'assets/img/osito-rosa.webp', w: 686, h: 806,
     desc: 'Un osito blanco con moño rosa, sentado en su canasta tejida de cera. Ideal para regalar o para decorar una mesa de noche.' },
 
   { id: 'ositos-canasta', line: 'deco', name: 'Familia de ositos en canasta', price: 85000,
-    img: 'assets/img/ositos-canasta.webp', w: 900, h: 479,
+    img: 'assets/img/ositos-canasta.webp', w: 893, h: 900,
     desc: 'Cuatro ositos en canastas tejidas de colores, cada uno con su moño. Un detalle tierno para compartir o decorar.' },
 
   { id: 'cupcakes', line: 'deco', name: 'Cupcakes de flores', price: 18000,
@@ -73,6 +73,14 @@ VL.PRODUCTS = [
     img: 'assets/img/coral.webp', w: 900, h: 842,
     desc: 'Flores coral con hojas verdes sobre cera amarilla, en un ramekin blanco.' },
 
+  { id: 'girasoles-ramekin', line: 'aroma', name: 'Girasoles en ramekin', price: 32000,
+    img: 'assets/img/girasoles-ramekin.webp', w: 693, h: 675,
+    desc: 'Un ramo de girasoles de cera sobre cera amarilla, en un ramekin blanco. Luz de verano para tu mesa.' },
+
+  { id: 'girasol-bowl', line: 'aroma', name: 'Girasoles en bowl de vidrio', price: 38000,
+    img: 'assets/img/girasol-bowl.webp', w: 900, h: 738,
+    desc: 'Girasoles con hojas verdes flotando sobre cera naranja, en un bowl de vidrio transparente.' },
+
   { id: 'pebetero', line: 'wax', name: 'Wax melts con pebetero', price: 45000,
     img: 'assets/img/pebetero.webp', w: 782, h: 900,
     desc: 'Corazones de cera para derretir en el pebetero, con una flor rosa de cera. Aroma suave, sin mecha.' },
@@ -82,12 +90,20 @@ VL.PRODUCTS = [
     desc: 'Un vaso lleno de corazones de cera en rojos, rosas y blancos, listos para el pebetero.' },
 
   { id: 'conejita', line: 'rec', name: 'Conejita con moño', price: 12000,
-    img: 'assets/img/conejita.webp', w: 593, h: 900,
+    img: 'assets/img/conejita.webp', w: 642, h: 900,
     desc: 'Conejita de orejas largas con moño lila. Perfecta como recuerdo de cumpleaños o baby shower.' },
 
   { id: 'recuerdo-tarjeta', line: 'rec', name: 'Ositos con tarjeta personalizada', price: 28000,
     img: 'assets/img/recuerdo-tarjeta.webp', w: 900, h: 660,
-    desc: 'Ositos en canasta amarilla con una tarjeta personalizada para la celebración.' }
+    desc: 'Ositos en canasta amarilla con una tarjeta personalizada para la celebración.' },
+
+  { id: 'osito-baby-shower', line: 'rec', name: 'Osito rosa para baby shower', price: 15000,
+    img: 'assets/img/osito-baby-shower.webp', w: 654, h: 756,
+    desc: 'Osito en canasta rosa pastel con moño, el recuerdo perfecto para un baby shower. Se puede acompañar con tarjeta personalizada.' },
+
+  { id: 'conejita-numero', line: 'rec', name: 'Conejita con número', price: 16000,
+    img: 'assets/img/conejita-numero.webp', w: 644, h: 532,
+    desc: 'Conejita con moño y el número de la edad en cera, empacada para celebrar un cumpleaños. Elige el número y el color.' },
 ];
 
 
