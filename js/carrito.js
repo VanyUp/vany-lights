@@ -28,7 +28,7 @@ function render() {
       <div class="empty">
         <span class="script">Aún vacío</span>
         <p>Todavía no has agregado velas. ¡Encuentra tu favorita!</p>
-        <a class="btn btn-dark" href="catalogo.html">Ir al catálogo</a>
+        <a class="btn btn-dark" href="/html/catalogo.html">Ir al catálogo</a>
       </div>`;
     return;
   }
@@ -51,7 +51,7 @@ function render() {
               <img src="${p.img}" alt="" width="${p.w}" height="${p.h}">
             </div>
             <div class="cart-info">
-              <h3><a href="producto.html?id=${p.id}">${p.name}</a></h3>
+              <h3><a href="/html/producto.html?id=${p.id}">${p.name}</a></h3>
               <span class="price">${VL.formatPrice(p.price)} c/u</span>
             </div>
             <div class="qty" role="group" aria-label="Cantidad de ${p.name}">

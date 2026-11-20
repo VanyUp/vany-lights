@@ -186,7 +186,7 @@ collections.querySelectorAll('.chapter').forEach((chapter) => {
       img.alt = p.name;
       img.width = p.w;
       img.height = p.h;
-      link.href = `producto.html?id=${p.id}`;
+      link.href = `/html/producto.html?id=${p.id}`;
       link.setAttribute('aria-label', `Ver detalle de ${p.name}`);
       name.textContent = p.name;
       price.textContent = VL.formatPrice(p.price);

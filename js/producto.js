@@ -19,7 +19,7 @@ if (!product) {
     <div class="empty" style="padding-top: 160px">
       <span class="script">Ups</span>
       <p>No encontramos esa vela.</p>
-      <a class="btn btn-dark" href="catalogo.html">Ver el catálogo</a>
+      <a class="btn btn-dark" href="/html/catalogo.html">Ver el catálogo</a>
     </div>`;
   related.closest('section').hidden = true;
 
@@ -41,7 +41,7 @@ if (!product) {
 
       <div class="product-copy">
         <nav class="breadcrumb" aria-label="Ruta">
-          <a href="index.html">Inicio</a> / <a href="catalogo.html?linea=${product.line}">${line.name}</a> / <span>${product.name}</span>
+          <a href="/html/index.html">Inicio</a> / <a href="/html/catalogo.html?linea=${product.line}">${line.name}</a> / <span>${product.name}</span>
         </nav>
         <span class="script" style="font-size: 40px; line-height: 1; color: ${line.ink}">${line.name}</span>
         <h1>${product.name}</h1>

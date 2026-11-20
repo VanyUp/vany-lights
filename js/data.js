@@ -39,47 +39,47 @@ VL.LINES = {
    Reemplázalos por los precios reales de Vany Lights (en pesos colombianos). */
 VL.PRODUCTS = [
   { id: 'osito-rosa', line: 'deco', name: 'Osito en canasta rosa', price: 25000,
-    img: 'assets/img/osito-rosa.webp', w: 686, h: 806,
+    img: '/assets/img/osito-rosa.webp', w: 686, h: 806,
     desc: 'Un osito blanco con moño rosa, sentado en su canasta tejida de cera. Ideal para regalar o para decorar una mesa de noche.' },
 
   { id: 'ositos-canasta', line: 'deco', name: 'Familia de ositos en canasta', price: 85000,
-    img: 'assets/img/ositos-canasta.webp', w: 893, h: 900,
+    img: '/assets/img/ositos-canasta.webp', w: 893, h: 900,
     desc: 'Cuatro ositos en canastas tejidas de colores, cada uno con su moño. Un detalle tierno para compartir o decorar.' },
 
   { id: 'cupcakes', line: 'deco', name: 'Cupcakes de flores', price: 18000,
-    img: 'assets/img/cupcakes.webp', w: 900, h: 418,
+    img: '/assets/img/cupcakes.webp', w: 900, h: 418,
     desc: 'Velas en forma de cupcake coronadas con flores de cera en tonos pastel.' },
 
   { id: 'margarita', line: 'aroma', name: 'Margarita en ramekin', price: 32000,
-    img: 'assets/img/margarita.webp', w: 900, h: 868,
+    img: '/assets/img/margarita.webp', w: 900, h: 868,
     desc: 'Una margarita blanca de centro rosa sobre cera verde, en un ramekin blanco acanalado.' },
 
   { id: 'trio', line: 'aroma', name: 'Trío de jardín', price: 75000,
-    img: 'assets/img/trio.webp', w: 892, h: 900,
+    img: '/assets/img/trio.webp', w: 892, h: 900,
     desc: 'Tres ramekins con flores de cera sobre verde, amarillo y celeste. Un pequeño jardín para tu mesa.' },
 
   { id: 'flores-vaso', line: 'aroma', name: 'Flores en vaso de vidrio', price: 35000,
-    img: 'assets/img/flores-vaso.webp', w: 900, h: 895,
+    img: '/assets/img/flores-vaso.webp', w: 900, h: 895,
     desc: 'Flores blancas y amarillas sobre un cielo de cera azul, en vaso de vidrio.' },
 
   { id: 'coral', line: 'aroma', name: 'Flores coral en ramekin', price: 30000,
-    img: 'assets/img/coral.webp', w: 900, h: 842,
+    img: '/assets/img/coral.webp', w: 900, h: 842,
     desc: 'Flores coral con hojas verdes sobre cera amarilla, en un ramekin blanco.' },
 
   { id: 'girasoles-ramekin', line: 'aroma', name: 'Girasoles en ramekin', price: 32000,
-    img: 'assets/img/girasoles-ramekin.webp', w: 693, h: 675,
+    img: '/assets/img/girasoles-ramekin.webp', w: 693, h: 675,
     desc: 'Un ramo de girasoles de cera sobre cera amarilla, en un ramekin blanco. Luz de verano para tu mesa.' },
 
   { id: 'girasol-bowl', line: 'aroma', name: 'Girasoles en bowl de vidrio', price: 38000,
-    img: 'assets/img/girasol-bowl.webp', w: 900, h: 738,
+    img: '/assets/img/girasol-bowl.webp', w: 900, h: 738,
     desc: 'Girasoles con hojas verdes flotando sobre cera naranja, en un bowl de vidrio transparente.' },
 
   { id: 'pebetero', line: 'wax', name: 'Wax melts con pebetero', price: 45000,
-    img: 'assets/img/pebetero.webp', w: 782, h: 900,
+    img: '/assets/img/pebetero.webp', w: 782, h: 900,
     desc: 'Corazones de cera para derretir en el pebetero, con una flor rosa de cera. Aroma suave, sin mecha.' },
 
   { id: 'corazones', line: 'wax', name: 'Vaso de corazones', price: 22000,
-    img: 'assets/img/corazones.webp', w: 739, h: 900,
+    img: '/assets/img/corazones.webp', w: 739, h: 900,
     desc: 'Un vaso lleno de corazones de cera en rojos, rosas y blancos, listos para el pebetero.' },
 
 
@@ -90,16 +90,16 @@ VL.PRODUCTS = [
 
 /* ---------- Galería "Así lucen en tus celebraciones" ----------
    Fotos de entregas reales (no se venden: son muestras del trabajo).
-   Para agregar una foto: guárdala en assets/img/ y agrega un objeto aquí.
+   Para agregar una foto: guárdala en /assets/img/ y agrega un objeto aquí.
    size: 'wide' ocupa 2 columnas, 'tall' ocupa 2 filas; pos elige qué parte de la foto se ve. */
 VL.GALLERY = [
-  { img: 'assets/img/fiesta.webp', w: 1000, h: 520, size: 'wide', pos: '50% 45%',
+  { img: '/assets/img/fiesta.webp', w: 1000, h: 520, size: 'wide', pos: '50% 45%',
     title: 'Cumpleaños de 3 años', text: 'Conejitas con su número, empacadas con moño lila.' },
-  { img: 'assets/img/ositos-evento.webp', w: 740, h: 780, pos: '50% 35%',
+  { img: '/assets/img/ositos-evento.webp', w: 740, h: 780, pos: '50% 35%',
     title: 'Mesa de recuerdos', text: 'Ositos en canasta amarilla para cada invitado.' },
-  { img: 'assets/img/baby-shower.webp', w: 720, h: 920, pos: '50% 72%',
+  { img: '/assets/img/baby-shower.webp', w: 720, h: 920, pos: '50% 72%',
     title: 'Baby shower', text: 'Osito rosa con tarjeta personalizada.' },
-  { img: 'assets/img/ositos-mesa.webp', w: 720, h: 840, pos: '50% 40%',
+  { img: '/assets/img/ositos-mesa.webp', w: 720, h: 840, pos: '50% 40%',
     title: 'Ositos con tarjeta', text: 'Con el nombre de la celebración.' }
 ];
 
