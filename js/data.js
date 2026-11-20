@@ -90,21 +90,17 @@ VL.PRODUCTS = [
 
 /* ---------- Galería "Así lucen en tus celebraciones" ----------
    Fotos de entregas reales (no se venden: son muestras del trabajo).
-   Para agregar una foto: guárdala en assets/img/galeria/ y agrega un objeto aquí.
+   Para agregar una foto: guárdala en assets/img/ y agrega un objeto aquí.
    size: 'wide' ocupa 2 columnas, 'tall' ocupa 2 filas; pos elige qué parte de la foto se ve. */
 VL.GALLERY = [
-  { img: 'assets/img/galeria/fiesta.webp', w: 1000, h: 520, size: 'wide', pos: '50% 45%',
+  { img: 'assets/img/fiesta.webp', w: 1000, h: 520, size: 'wide', pos: '50% 45%',
     title: 'Cumpleaños de 3 años', text: 'Conejitas con su número, empacadas con moño lila.' },
-  { img: 'assets/img/galeria/empaque.webp', w: 680, h: 820, size: 'tall', pos: '50% 40%',
-    title: 'Listas para entregar', text: 'Cada recuerdo se empaca a mano.' },
-  { img: 'assets/img/galeria/ositos-evento.webp', w: 740, h: 780, pos: '50% 35%',
+  { img: 'assets/img/ositos-evento.webp', w: 740, h: 780, pos: '50% 35%',
     title: 'Mesa de recuerdos', text: 'Ositos en canasta amarilla para cada invitado.' },
-  { img: 'assets/img/galeria/baby-shower.webp', w: 720, h: 920, pos: '50% 72%',
+  { img: 'assets/img/baby-shower.webp', w: 720, h: 920, pos: '50% 72%',
     title: 'Baby shower', text: 'Osito rosa con tarjeta personalizada.' },
-  { img: 'assets/img/galeria/ositos-mesa.webp', w: 720, h: 840, pos: '50% 40%',
-    title: 'Ositos con tarjeta', text: 'Con el nombre de la celebración.' },
-  { img: 'assets/img/galeria/conejitas.webp', w: 720, h: 330, size: 'wide', pos: '50% 45%',
-    title: 'Hechas una por una', text: 'Del taller a tu celebración.' }
+  { img: 'assets/img/ositos-mesa.webp', w: 720, h: 840, pos: '50% 40%',
+    title: 'Ositos con tarjeta', text: 'Con el nombre de la celebración.' }
 ];
 
 
