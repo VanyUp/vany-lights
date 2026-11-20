@@ -247,68 +247,33 @@ button { font: inherit; }
 .fade-in { opacity: 0; animation: aparecer 1.2s var(--ease) forwards; }
 @keyframes aparecer { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
-/* --- La vela --- */
-.base { position: relative; z-index: 2; width: 130px; flex: none; margin-top: 130px; margin-bottom: 30px; }
-.candle { position: relative; width: 130px; }
+/* --- La vela: ilustración de línea fina dorada --- */
+.base { position: relative; z-index: 2; width: 220px; flex: none; margin-top: 6px; }
+.candle { position: relative; width: 220px; height: 300px; }
+.candle-art { position: absolute; inset: 0; width: 220px; height: 300px; overflow: visible; }
 
-/* Cuerpo de cera: degradado con brillo a la izquierda, como cera real */
-.cbody {
-  position: relative; width: 130px; height: 170px;
-  border-radius: 14px 14px 26px 26px / 10px 10px 22px 22px;
-  background: linear-gradient(90deg, #E2D0EE 0%, #F7F0FB 22%, #FFFFFF 38%, #F6EEFA 60%, #E9DCF2 82%, #D5C0E6 100%);
-  box-shadow: 0 34px 50px rgba(20, 12, 30, .30), inset 0 -18px 26px rgba(155, 123, 184, .20);
+/* Cada trazo tiene pathLength="1": su largo vale 1, así que un guion de 1
+   corrido 1 lo esconde. Al animar el corrimiento a 0, la línea se "dibuja".
+   --d es el retraso de cada trazo (se define en el HTML). */
+.draw {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: trazar 1.4s var(--d, 0s) var(--ease) forwards;
 }
-.cbody::before {   /* borde superior */
-  content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 26px; border-radius: 50%;
-  background: linear-gradient(180deg, #FFFFFF, #EFE3F6);
-  box-shadow: inset 0 -2px 4px rgba(155, 123, 184, .25);
-}
-.cbody::after {    /* pocito de cera derretida, con la luz de la llama */
-  content: ''; position: absolute; top: -7px; left: 16px; right: 16px; height: 15px; border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 40%, #FFF6E2 0%, #F8E7F1 60%, #EBDDF3 100%);
-  box-shadow: inset 0 2px 4px rgba(155, 123, 184, .25);
-}
+@keyframes trazar { to { stroke-dashoffset: 0; } }
 
-/* Gotas de cera que escurren por el borde */
-.drip {
-  position: absolute; top: -2px; width: 11px; border-radius: 0 0 8px 8px;
-  background: linear-gradient(90deg, #F2E9F8, #FFFFFF 50%, #EDE2F5);
-  box-shadow: 0 2px 3px rgba(155, 123, 184, .15);
-}
-.drip::after { content: ''; position: absolute; bottom: -5px; left: 1px; width: 9px; height: 9px; border-radius: 50%; background: inherit; }
-.drip-1 { left: 22px; height: 26px; }
-.drip-2 { right: 30px; height: 16px; width: 9px; }
+/* El humo ondula suavemente después de dibujarse */
+.smoke { animation: trazar 1.4s var(--d, 0s) var(--ease) forwards, humo 5s 3s ease-in-out infinite; transform-origin: 110px 56px; }
+@keyframes humo { 0%, 100% { transform: skewX(0); } 50% { transform: skewX(-8deg) translateY(-2px); } }
 
-/* La luz de la llama se transparenta en la parte alta de la cera */
-.wax-glow {
-  position: absolute; inset: 0 0 40% 0; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 210, 140, .55) 0%, rgba(255, 210, 140, 0) 70%);
-  opacity: 0; animation: aparecer 1.2s 1.2s forwards, ceraTitila 2.6s 2.4s ease-in-out infinite;
-}
-@keyframes ceraTitila { 0%, 100% { filter: brightness(1); } 40% { filter: brightness(1.15); } 70% { filter: brightness(.92); } }
+.wax-fill { opacity: 0; animation: aparecer 1.2s .6s forwards; }
+.wax-light { opacity: 0; animation: aparecer 1.2s 2.4s forwards, ceraTitila 2.6s 3.6s ease-in-out infinite; }
+@keyframes ceraTitila { 0%, 100% { opacity: 1; } 40% { opacity: .75; } 70% { opacity: 1; } 85% { opacity: .85; } }
 
-/* Cinta lila con el nombre de la marca */
-.band {
-  position: absolute; left: 0; right: 0; top: 92px; height: 34px;
-  display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(90deg, #8E6CB0 0%, #B79BE0 35%, #C8B0EA 50%, #A486CC 70%, #7E5DA2 100%);
-  box-shadow: 0 2px 6px rgba(74, 59, 87, .2);
-}
-.band span { font-family: var(--f-script); font-size: 24px; line-height: 1; color: #FFF8FC; text-shadow: 0 1px 2px rgba(74, 59, 87, .3); }
-
-.wick { position: absolute; left: 63px; top: -28px; z-index: 1; width: 3px; height: 24px; border-radius: 2px; background: linear-gradient(#2E2420, #6A574A); transform: rotate(4deg); transform-origin: bottom; }
-
-/* Pedestal pequeño bajo la vela */
-.hero-podium { position: absolute; left: 50%; bottom: -40px; width: 230px; height: 56px; margin-left: -115px; }
-.hp-body {
-  position: absolute; left: 0; right: 0; top: 16px; bottom: 0; border-radius: 0 0 115px 115px / 0 0 18px 18px;
-  background: linear-gradient(90deg, #E5D6EF 0%, #FFFFFF 46%, #E5D6EF 100%);
-  box-shadow: 0 24px 40px rgba(20, 12, 30, .25);
-}
-.hp-top { position: absolute; left: 0; right: 0; top: 0; height: 34px; border-radius: 50%; background: radial-gradient(ellipse at 50% 35%, #FFFFFF, #EFE3F6 70%); }
+.tiny-stars circle { opacity: 0; animation: aparecer 1s 1.6s forwards, titilar 3.6s 2.6s ease-in-out infinite; }
+.tiny-stars circle:nth-child(2n) { animation-delay: 1.8s, 3.4s; }
 
 /* Arco de línea fina: GSAP lo dibuja con stroke-dashoffset */
-.hero-arch { position: absolute; left: 50%; bottom: -40px; width: 280px; height: 340px; margin-left: -140px; pointer-events: none; }
+.hero-arch { position: absolute; left: 50%; bottom: -14px; width: 280px; height: 340px; margin-left: -140px; pointer-events: none; }
 .hero-deco { position: absolute; inset: 0; opacity: 0; visibility: hidden; pointer-events: none; }
 .hero-petal { position: absolute; }
 .hero-petal svg { display: block; animation: petaloFlota 7s ease-in-out infinite; }
@@ -316,17 +281,17 @@ button { font: inherit; }
 
 /* Anticipación: una chispa antes de que aparezca la llama */
 .spark {
-  position: absolute; left: 65px; top: -30px; width: 12px; height: 12px; margin-left: -6px;
+  position: absolute; left: 110px; top: 122px; width: 12px; height: 12px; margin-left: -6px; z-index: 3;
   border-radius: 50%; background: #FFE8A8; box-shadow: 0 0 22px 8px rgba(255, 214, 120, .95);
-  transform: scale(0); animation: chispa .5s .35s ease-out forwards;
+  transform: scale(0); animation: chispa .5s 1.9s ease-out forwards;
 }
 @keyframes chispa { 60% { transform: scale(1.5); } 100% { transform: scale(0); opacity: 0; } }
 
 /* La llama crece desde la mecha con un pequeño rebote */
 .flamebox {
-  position: absolute; left: 65px; top: -94px; z-index: 2; width: 40px; height: 74px; margin-left: -20px;
+  position: absolute; left: 110px; top: 62px; z-index: 2; width: 34px; height: 70px; margin-left: -17px;
   transform-origin: 50% 100%; transform: scaleY(0) scaleX(.5);
-  animation: encender .8s .7s var(--ease-rebote) forwards;
+  animation: encender .8s 2.2s var(--ease-rebote) forwards;
 }
 @keyframes encender { to { transform: none; } }
 
@@ -334,7 +299,7 @@ button { font: inherit; }
   position: absolute; inset: 0; border-radius: 50% / 62% 62% 38% 38%;
   background: radial-gradient(ellipse at 50% 78%, #FFF8DE 0%, #FFD47E 32%, #F7A35C 60%, rgba(247, 163, 92, 0) 78%);
   transform-origin: 50% 100%; filter: drop-shadow(0 0 18px rgba(255, 200, 120, .8));
-  animation: parpadeo 2.6s 1.5s ease-in-out infinite;
+  animation: parpadeo 2.6s 3s ease-in-out infinite;
 }
 .flame-core {
   position: absolute; left: 12px; right: 12px; bottom: 3px; height: 26px; border-radius: 50%;
@@ -344,7 +309,7 @@ button { font: inherit; }
 .flame-glow {
   position: absolute; left: -20px; right: -20px; top: -10px; bottom: -10px; border-radius: 50%;
   background: radial-gradient(ellipse at 50% 70%, rgba(255, 190, 110, .55), rgba(255, 190, 110, 0) 70%);
-  filter: blur(4px); animation: parpadeo 2.6s 1.7s ease-in-out infinite;
+  filter: blur(4px); animation: parpadeo 2.6s 3.2s ease-in-out infinite;
 }
 /* Parpadeo irregular, como una llama real */
 @keyframes parpadeo {
@@ -358,16 +323,16 @@ button { font: inherit; }
 
 /* Halo cálido alrededor de la llama */
 .halo {
-  position: absolute; left: 65px; top: -58px; width: 240px; height: 240px; margin: -120px 0 0 -120px;
+  position: absolute; left: 110px; top: 100px; width: 240px; height: 240px; margin: -120px 0 0 -120px;
   border-radius: 50%; pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 214, 150, .55), rgba(255, 214, 150, 0) 65%);
-  opacity: 0; animation: aparecer 1.4s 1s forwards, respirar 4s 2.4s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(255, 214, 150, .5), rgba(255, 214, 150, 0) 65%);
+  opacity: 0; animation: aparecer 1.4s 2.3s forwards, respirar 4s 3.7s ease-in-out infinite;
 }
 @keyframes respirar { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
 
 /* El amanecer: nace en la llama. GSAP lo agranda con el scroll. */
 .dawn {
-  position: absolute; left: 65px; top: -58px; z-index: -1;
+  position: absolute; left: 110px; top: 100px; z-index: -1;
   width: 360px; height: 360px; margin: -180px 0 0 -180px; border-radius: 50%; pointer-events: none;
   background: radial-gradient(circle, #FFF6E8 0%, #FDEBDD 30%, #F9DCE5 52%, rgba(249, 220, 229, 0) 72%);
   transform: scale(.32); opacity: 0;   /* home.js la hace aparecer y crecer */
@@ -519,6 +484,37 @@ button { font: inherit; }
 .thumb img { max-height: 100%; filter: drop-shadow(0 6px 6px rgba(74, 59, 87, .2)); }
 .thumb:hover { transform: translateY(-4px) rotate(-3deg); }
 .thumb[aria-pressed="true"] { background: var(--blanco); box-shadow: 0 0 0 2px var(--ciruela), 0 12px 24px rgba(74, 59, 87, .16); }
+
+
+/* --- Así lucen en tus celebraciones (galería tipo mosaico) --- */
+.celebrations { padding: 110px 0 120px; background: linear-gradient(180deg, var(--crema) 0%, #F1EAF8 50%, var(--crema) 100%); }
+.celebrations-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; margin-bottom: 50px; }
+.celebrations-head .lead { margin: 0; max-width: 580px; font-size: 19px; color: var(--texto-suave); }
+
+/* Collage editorial con CSS Grid: .wide ocupa 2 columnas y .tall 2 filas */
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 260px; gap: 22px; }
+.shot {
+  position: relative; margin: 0; overflow: hidden;
+  border-radius: 28px; box-shadow: var(--sombra); background: var(--blanco);
+}
+.shot.wide { grid-column: span 2; }
+.shot.tall { grid-row: span 2; }
+.shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.shot:hover img { transform: scale(1.06); }
+.shot figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 22px 18px;
+  display: flex; flex-direction: column; gap: 2px; color: var(--blanco);
+  background: linear-gradient(180deg, rgba(38, 28, 51, 0) 0%, rgba(38, 28, 51, .72) 100%);
+}
+.shot figcaption strong { font-family: var(--f-titulo); font-size: 24px; font-weight: 600; line-height: 1.1; }
+.shot figcaption span { font-size: 15px; opacity: .92; }
+
+.celebrations-cta {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;
+  margin-top: 30px; padding: 30px 34px; border-radius: 30px; background: var(--blanco); box-shadow: var(--sombra);
+}
+.celebrations-cta h3 { margin: 0; font-size: 32px; line-height: 1.1; }
+.celebrations-cta p { margin: 6px 0 0; color: var(--texto-suave); }
 
 
 /* =========================================================
@@ -768,6 +764,12 @@ button { font: inherit; }
   .step img { width: 160px; height: 160px; }
 }
 
+@media (max-width: 760px) {
+  .gallery { grid-template-columns: 1fr; grid-auto-rows: 300px; }
+  .shot.wide { grid-column: auto; }
+  .shot.tall { grid-row: span 1; }
+}
+
 @media (max-width: 520px) {
   .podium { width: 250px; margin-left: -125px; }
   .product-img { max-height: 280px; }
@@ -790,6 +792,8 @@ button { font: inherit; }
   .dawn { opacity: .6 !important; }
   .flamebox { transform: none !important; }
   .spark { display: none; }
+  .draw { stroke-dashoffset: 0 !important; }
+  .wax-fill, .wax-light, .tiny-stars circle { opacity: 1 !important; }
   .scene { transform: none !important; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }
