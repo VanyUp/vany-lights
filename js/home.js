@@ -207,8 +207,16 @@ collections.querySelectorAll('.chapter').forEach((chapter) => {
   });
 });
 
-// Activa la aparición al hacer scroll en lo que acabamos de crear
-VL.observeReveals(collections);
+/* Galería de celebraciones: una figura por foto de VL.GALLERY */
+const gallery = document.getElementById('galeria');
+gallery.innerHTML = VL.GALLERY.map((photo, i) => `
+  <figure class="shot reveal ${photo.size || ''}" style="transition-delay:${(i % 3) * 0.12}s">
+    <img src="${photo.img}" alt="${photo.title}: ${photo.text}" width="${photo.w}" height="${photo.h}" loading="lazy" style="object-position:${photo.pos || 'center'}">
+    <figcaption><strong>${photo.title}</strong><span>${photo.text}</span></figcaption>
+  </figure>`).join('');
+
+// Activa la aparición al hacer scroll en todo lo que acabamos de crear
+VL.observeReveals(document);
 
 
 /* Pétalos en parallax: se mueven a otra velocidad que el scroll */

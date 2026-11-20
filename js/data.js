@@ -30,13 +30,6 @@ VL.LINES = {
     text: 'Corazones de cera para derretir en el pebetero. Perfuman tu espacio de forma suave, sin mecha.',
     bg: '#E7DEF5', accent: '#D2C3EE', glow: '#FAF6FF', petal: '#B79BE0', ink: '#6B48A0',
     marquee: 'corazones · pebetero · aroma · '
-  },
-  rec: {
-    name: 'Recuerdos', num: '04',
-    titleA: 'Detalles para', titleB: 'recordar',
-    text: 'Recuerdos para cumpleaños, baby showers y celebraciones, personalizados con número, color, tarjeta y empaque.',
-    bg: '#DCEAF7', accent: '#BFD8EF', glow: '#F5FAFF', petal: '#8DB8E2', ink: '#2F5F92',
-    marquee: 'celebra · recuerda · regala · '
   }
 };
 
@@ -89,21 +82,29 @@ VL.PRODUCTS = [
     img: 'assets/img/corazones.webp', w: 739, h: 900,
     desc: 'Un vaso lleno de corazones de cera en rojos, rosas y blancos, listos para el pebetero.' },
 
-  { id: 'conejita', line: 'rec', name: 'Conejita con moño', price: 12000,
-    img: 'assets/img/conejita.webp', w: 642, h: 900,
-    desc: 'Conejita de orejas largas con moño lila. Perfecta como recuerdo de cumpleaños o baby shower.' },
 
-  { id: 'recuerdo-tarjeta', line: 'rec', name: 'Ositos con tarjeta personalizada', price: 28000,
-    img: 'assets/img/recuerdo-tarjeta.webp', w: 900, h: 660,
-    desc: 'Ositos en canasta amarilla con una tarjeta personalizada para la celebración.' },
 
-  { id: 'osito-baby-shower', line: 'rec', name: 'Osito rosa para baby shower', price: 15000,
-    img: 'assets/img/osito-baby-shower.webp', w: 654, h: 756,
-    desc: 'Osito en canasta rosa pastel con moño, el recuerdo perfecto para un baby shower. Se puede acompañar con tarjeta personalizada.' },
 
-  { id: 'conejita-numero', line: 'rec', name: 'Conejita con número', price: 16000,
-    img: 'assets/img/conejita-numero.webp', w: 644, h: 532,
-    desc: 'Conejita con moño y el número de la edad en cera, empacada para celebrar un cumpleaños. Elige el número y el color.' },
+];
+
+
+/* ---------- Galería "Así lucen en tus celebraciones" ----------
+   Fotos de entregas reales (no se venden: son muestras del trabajo).
+   Para agregar una foto: guárdala en assets/img/galeria/ y agrega un objeto aquí.
+   size: 'wide' ocupa 2 columnas, 'tall' ocupa 2 filas; pos elige qué parte de la foto se ve. */
+VL.GALLERY = [
+  { img: 'assets/img/galeria/fiesta.webp', w: 1000, h: 520, size: 'wide', pos: '50% 45%',
+    title: 'Cumpleaños de 3 años', text: 'Conejitas con su número, empacadas con moño lila.' },
+  { img: 'assets/img/galeria/empaque.webp', w: 680, h: 820, size: 'tall', pos: '50% 40%',
+    title: 'Listas para entregar', text: 'Cada recuerdo se empaca a mano.' },
+  { img: 'assets/img/galeria/ositos-evento.webp', w: 740, h: 780, pos: '50% 35%',
+    title: 'Mesa de recuerdos', text: 'Ositos en canasta amarilla para cada invitado.' },
+  { img: 'assets/img/galeria/baby-shower.webp', w: 720, h: 920, pos: '50% 72%',
+    title: 'Baby shower', text: 'Osito rosa con tarjeta personalizada.' },
+  { img: 'assets/img/galeria/ositos-mesa.webp', w: 720, h: 840, pos: '50% 40%',
+    title: 'Ositos con tarjeta', text: 'Con el nombre de la celebración.' },
+  { img: 'assets/img/galeria/conejitas.webp', w: 720, h: 330, size: 'wide', pos: '50% 45%',
+    title: 'Hechas una por una', text: 'Del taller a tu celebración.' }
 ];
 
 
