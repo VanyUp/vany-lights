@@ -10,10 +10,11 @@
   <!-- Tipografías de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"></noscript>
 
   <!-- Nuestra hoja de estilos -->
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 
   <!-- ===================== ENCABEZADO ===================== -->
   <header class="site-header">
-    <a class="brand" href="/html/index.html" aria-label="Vany Lights, inicio">
+    <a class="brand" href="index.html" aria-label="Vany Lights, inicio">
       <span class="brand-vany">Vany</span>
       <span class="brand-lights">Lights</span>
     </a>
@@ -34,12 +35,12 @@
 
     <nav aria-label="Principal">
       <ul class="nav-links" id="menu">
-        <li><a class="nav-link" href="/html/index.html">Inicio</a></li>
-        <li><a class="nav-link" href="/html/catalogo.html">Catálogo</a></li>
-        <li><a class="nav-link" href="/html/nosotros.html">Nosotros</a></li>
-        <li><a class="nav-link" href="/html/contacto.html">Contacto</a></li>
+        <li><a class="nav-link" href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+        <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
         <li>
-          <a class="cart-link" href="/html/carrito.html">
+          <a class="cart-link" href="carrito.html">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
             Carrito
             <span class="badge" data-cart-count aria-label="productos en el carrito">0</span>
@@ -64,7 +65,7 @@
         <p><strong>Vany Lights</strong> nace en Bogotá de las manos de Vanesa, que convirtió su gusto por los detalles en velas que se pueden regalar, encender y guardar.</p>
         <p>Cada vela se hace una por una: se derrite la cera, se elige el color y el aroma, se moldea y se termina a mano con moños, flores y tarjetas.</p>
         <p>Por eso ninguna es exactamente igual a otra. Hacemos velas decorativas, aromáticas, wax melts para pebetero y recuerdos personalizados para tus celebraciones, con envíos a todo Colombia.</p>
-        <a class="btn btn-dark" href="/html/catalogo.html" style="align-self: flex-start">Ver el catálogo</a>
+        <a class="btn btn-dark" href="catalogo.html" style="align-self: flex-start">Ver el catálogo</a>
       </div>
       <!-- nosotros.js pone aquí el pedestal con una vela -->
       <div class="about-art stage reveal" id="about-art" style="height: 600px"></div>
@@ -84,7 +85,7 @@
               <span class="eyebrow">Sigue bajando →</span>
             </div>
             <article class="step" style="background: #F9DCE5">
-              <img src="/assets/img/corazones.webp" alt="" loading="lazy" width="400" height="400">
+              <img src="assets/img/corazones.webp" alt="" loading="lazy" width="400" height="400">
               <span class="step-n" style="color: #A8456E" aria-hidden="true">1</span>
               <div>
                 <h3><span class="sr-only">Paso 1: </span>Derretir</h3>
@@ -92,7 +93,7 @@
               </div>
             </article>
             <article class="step" style="background: #DDF0E4">
-              <img src="/assets/img/trio.webp" alt="" loading="lazy" width="400" height="400">
+              <img src="assets/img/trio.webp" alt="" loading="lazy" width="400" height="400">
               <span class="step-n" style="color: #2F7350" aria-hidden="true">2</span>
               <div>
                 <h3><span class="sr-only">Paso 2: </span>Color y aroma</h3>
@@ -100,7 +101,7 @@
               </div>
             </article>
             <article class="step" style="background: #E7DEF5">
-              <img src="/assets/img/osito-rosa.webp" alt="" loading="lazy" width="400" height="400">
+              <img src="assets/img/osito-rosa.webp" alt="" loading="lazy" width="400" height="400">
               <span class="step-n" style="color: #6B48A0" aria-hidden="true">3</span>
               <div>
                 <h3><span class="sr-only">Paso 3: </span>Moldear</h3>
@@ -108,7 +109,7 @@
               </div>
             </article>
             <article class="step" style="background: #DCEAF7">
-              <img src="/assets/img/recuerdo-tarjeta.webp" alt="" loading="lazy" width="400" height="400">
+              <img src="assets/img/recuerdo-tarjeta.webp" alt="" loading="lazy" width="400" height="400">
               <span class="step-n" style="color: #2F5F92" aria-hidden="true">4</span>
               <div>
                 <h3><span class="sr-only">Paso 4: </span>Detallar y empacar</h3>
@@ -143,21 +144,21 @@
         <a class="btn btn-outline-light" href="https://www.instagram.com/vany.lights/" target="_blank" rel="noopener">Instagram @vany.lights</a>
       </div>
       <nav class="footer-nav" aria-label="Pie de página">
-        <a href="/html/index.html">Inicio</a>
-        <a href="/html/catalogo.html">Catálogo</a>
-        <a href="/html/nosotros.html">Nosotros</a>
-        <a href="/html/contacto.html">Contacto</a>
-        <a href="/html/carrito.html">Carrito</a>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito</a>
       </nav>
       <p class="footer-small">© Vany Lights · Velas artesanales hechas a mano · Fotos propias</p>
     </div>
   </footer>
 
   <!-- ===== JavaScript ===== -->
-  <script src="/assets/vendor/gsap.min.js"></script>
-  <script src="/assets/vendor/ScrollTrigger.min.js"></script>
-  <script src="/js/data.js"></script>
-  <script src="/js/main.js"></script>
-  <script src="/js/nosotros.js"></script>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nosotros.js"></script>
 </body>
 </html>

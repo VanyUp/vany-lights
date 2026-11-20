@@ -29,6 +29,10 @@ if (!VL.reduceMotion && window.gsap && window.ScrollTrigger) {
 
   gsap.registerPlugin(ScrollTrigger);
 
+  // En iPhone la barra del navegador aparece y desaparece al hacer scroll;
+  // así ScrollTrigger no recalcula todo cada vez (evita saltos).
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
   /* Una "timeline" es una línea de tiempo: varias animaciones en orden.
      Con scrollTrigger, en vez de avanzar con el reloj, AVANZA CON EL SCROLL.
      - trigger: el elemento que dispara la animación
@@ -114,7 +118,7 @@ function chapterHTML(key, index, keys) {
 
   return `
   <section class="chapter" id="${key}" style="background:${background}" aria-labelledby="titulo-${key}">
-    <div class="marquee" aria-hidden="true">${line.marquee.repeat(6)}</div>
+    <div class="marquee" aria-hidden="true" data-text="${line.marquee.repeat(6)}"></div>
 
     <div class="chapter-inner ${index % 2 ? 'rev' : ''}">
 
@@ -186,7 +190,7 @@ collections.querySelectorAll('.chapter').forEach((chapter) => {
       img.alt = p.name;
       img.width = p.w;
       img.height = p.h;
-      link.href = `/html/producto.html?id=${p.id}`;
+      link.href = `producto.html?id=${p.id}`;
       link.setAttribute('aria-label', `Ver detalle de ${p.name}`);
       name.textContent = p.name;
       price.textContent = VL.formatPrice(p.price);

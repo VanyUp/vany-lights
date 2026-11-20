@@ -59,7 +59,7 @@
    ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 body {
   margin: 0;
@@ -194,7 +194,8 @@ button { font: inherit; }
    y la luz de la llama crece hasta volver la noche pastel.
    ========================================================= */
 .hero {
-  position: relative; height: 100vh; min-height: 700px; overflow: hidden;
+  /* svh = alto real visible en el celular (sin la barra del navegador). 100vh queda como respaldo. */
+  position: relative; height: 100vh; height: 100svh; min-height: 560px; overflow: hidden;
   background: var(--ciruela-noche);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: clamp(18px, 3vh, 40px); padding: 100px 24px 48px;
@@ -369,6 +370,8 @@ button { font: inherit; }
   font-family: var(--f-script); font-size: 120px; line-height: 1; opacity: .16;
   animation: desfile 40s linear infinite;
 }
+/* El texto va en ::before: es solo decoración, así no cuenta como texto con poco contraste */
+.marquee::before { content: attr(data-text); }
 @keyframes desfile { to { transform: translateX(-50%); } }
 
 /* --- El escenario de la vela --- */
@@ -523,7 +526,7 @@ button { font: inherit; }
    Sin movimiento: la franja se recorre con scroll horizontal.
    ========================================================= */
 .process { background: var(--crema); overflow: hidden; }
-.process-pin { min-height: 100vh; display: flex; align-items: center; padding: 110px 0 70px; }
+.process-pin { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 110px 0 70px; }
 .track-wrap { width: 100%; overflow-x: auto; }
 .motion-ok .track-wrap { overflow: visible; }
 .track { display: flex; gap: 28px; width: max-content; padding: 0 28px; }
@@ -621,7 +624,10 @@ button { font: inherit; }
 .qty-btn:hover { background: #F1E6F6; }
 .qty-value { min-width: 28px; text-align: center; font-weight: 600; }
 
-.related { padding: 40px 0 120px; }
+#detalle { min-height: 100vh; }
+#grid { min-height: 100vh; }      /* lo mismo en el catálogo */
+#carrito { min-height: 70vh; }    /* y en el carrito */   /* reserva espacio mientras JS arma el detalle: evita que la página salte */
+.related { padding: 40px 0 120px; min-height: 520px; }
 .related h2 { margin: 0 0 28px; }
 
 /* --- Carrito --- */
@@ -756,8 +762,17 @@ button { font: inherit; }
   .hero-petal { display: none; }
   .hint { left: 0; right: 0; justify-content: center; bottom: 18px; white-space: nowrap; }
 
-  .stage { height: 560px; }
-  .scene { height: 520px; }
+  /* Escenario más compacto en celular */
+  .stage { height: 450px; }
+  .scene { height: 420px; width: min(350px, 86vw); }
+  .arch { bottom: 92px; }
+  .podium { width: 240px; height: 116px; margin-left: -120px; bottom: 14px; }
+  .podium-top { height: 58px; }
+  .podium-body { top: 29px; }
+  .product-wrap { bottom: 96px; }
+  .product-img { max-height: 250px; max-width: min(260px, 64vw); }
+  .zoom-hint { bottom: -4px; }
+  .aura { width: 420px; height: 420px; }
   .chapter-inner { padding: 60px 22px; gap: 10px; }
   .step { width: 300px; height: 440px; }
   .step-intro { width: 300px; }
@@ -774,6 +789,29 @@ button { font: inherit; }
   .podium { width: 250px; margin-left: -125px; }
   .product-img { max-height: 280px; }
   .marquee { font-size: 80px; }
+}
+
+
+
+/* Pantallas bajitas (la mayoría de celulares con la barra del navegador visible) */
+@media (max-height: 780px) {
+  .hero { gap: 10px; padding-top: 86px; padding-bottom: 20px; }
+  .big { font-size: clamp(46px, 7vw, 104px); }
+  .big-2 { font-size: clamp(38px, 5.4vw, 84px); }
+  .base { transform: scale(.8); transform-origin: 50% 0; margin-bottom: -60px; }
+}
+@media (max-height: 640px) {
+  .base { transform: scale(.68); margin-bottom: -96px; }
+  .hero-chips { gap: 6px; }
+  .hero-chip { min-height: 40px; padding: 0 14px 0 10px; font-size: 14px; }
+}
+
+/* Pantallas táctiles: sin mouse no hay inclinación, así que aplanamos las capas 3D.
+   Safari en iPhone a veces dibuja mal las capas con translateZ. */
+@media (hover: none) {
+  .scene { transform-style: flat; }
+  .arch, .podium, .product-wrap { transform: none; }
+  .stage { perspective: none; }
 }
 
 

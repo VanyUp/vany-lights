@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ===== Información de la página (no se ve, pero es importante) ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vany Lights · Velas artesanales hechas a mano en Bogotá</title>
+  <meta name="description" content="Velas artesanales hechas a mano en Bogotá: decorativas, aromáticas, wax melts y recuerdos para tus celebraciones. Envíos nacionales.">
+  <meta name="theme-color" content="#261C33">
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"></noscript>
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Enlace para saltar el menú con el teclado (accesibilidad) -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Vany Lights, inicio">
+      <span class="brand-vany">Vany</span>
+      <span class="brand-lights">Lights</span>
+    </a>
+
+    <!-- Botón de menú: solo se ve en celular -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="nav-links" id="menu">
+        <li><a class="nav-link" href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+        <li><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li>
+          <a class="cart-link" href="carrito.html">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            Carrito
+            <span class="badge" data-cart-count aria-label="productos en el carrito">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===================== 1. INICIO: LA VELA SE ENCIENDE ===================== -->
+    <section class="hero" aria-labelledby="titulo-inicio">
+      <!-- Cielo de noche (las estrellas las agrega home.js) -->
+      <div class="night" aria-hidden="true"></div>
+
+      <!-- Los dos mensajes comparten el mismo lugar -->
+      <div class="msgs">
+        <div class="msg msg1">
+          <p class="eyebrow fade-in" style="animation-delay: 1.1s">Velas artesanales · Bogotá</p>
+          <h1 class="big" id="titulo-inicio" aria-label="Enciende tu luz">
+            <!-- Cada letra entra con un retraso distinto: efecto letra por letra -->
+            <span aria-hidden="true">
+              <span class="ch" style="animation-delay: 1.30s">E</span><span class="ch" style="animation-delay: 1.38s">n</span><span class="ch" style="animation-delay: 1.46s">c</span><span class="ch" style="animation-delay: 1.54s">i</span><span class="ch" style="animation-delay: 1.62s">e</span><span class="ch" style="animation-delay: 1.70s">n</span><span class="ch" style="animation-delay: 1.78s">d</span><span class="ch" style="animation-delay: 1.86s">e</span>
+            </span>
+            <span class="script fade-in" aria-hidden="true" style="display: block; font-size: .78em; color: #F4C6D6; animation-delay: 2.1s">tu luz</span>
+          </h1>
+        </div>
+
+        <div class="msg msg2">
+          <p class="eyebrow">Vany Lights</p>
+          <h2 class="big big-2">Hechas a mano,<br><span class="script" style="color: #8C5FA8">hechas con amor</span></h2>
+          <!-- Accesos directos a cada línea (capítulos de abajo) -->
+          <nav class="hero-chips" aria-label="Nuestras líneas">
+            <a class="hero-chip" href="#deco"><i style="background: #F4C2D2"></i>Decorativas</a>
+            <a class="hero-chip" href="#aroma"><i style="background: #BFE3CB"></i>Aromáticas</a>
+            <a class="hero-chip" href="#wax"><i style="background: #D2C3EE"></i>Wax melts</a>
+            <a class="hero-chip" href="#celebraciones"><i style="background: #BFD8EF"></i>Celebraciones</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- La vela (decorativa: aria-hidden) -->
+      <div class="base" aria-hidden="true">
+
+        <!-- Arco de línea fina: GSAP lo "dibuja" después del amanecer -->
+        <svg class="hero-arch" viewBox="0 0 280 340" fill="none">
+          <defs>
+            <linearGradient id="lineaArco" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#D9B87A"/>
+              <stop offset="1" stop-color="#B79BE0"/>
+            </linearGradient>
+          </defs>
+          <path class="arch-line" d="M8 340 V140 A132 132 0 0 1 272 140 V340" stroke="url(#lineaArco)" stroke-width="1.6"/>
+          <path class="arch-line" d="M22 340 V143 A118 118 0 0 1 258 143 V340" stroke="url(#lineaArco)" stroke-width=".8" opacity=".55"/>
+        </svg>
+
+        <!-- Destellos y pétalos que aparecen con la luz -->
+        <div class="hero-deco">
+          <span class="sparkle" style="left: -70px; top: -40px; animation-delay: -.6s"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D9B87A"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+          <span class="sparkle" style="right: -84px; top: 10px; animation-delay: -1.8s"><svg width="13" height="13" viewBox="0 0 24 24" fill="#B79BE0"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+          <span class="sparkle" style="left: -96px; top: 110px; animation-delay: -2.6s"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F09AB5"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+          <span class="sparkle" style="right: -60px; top: -96px; animation-delay: -1s"><svg width="10" height="10" viewBox="0 0 24 24" fill="#D9B87A"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></span>
+          <span class="hero-petal" style="left: -150px; top: -10px"><svg width="26" height="26" viewBox="0 0 24 24" fill="#F4C2D2"><path d="M12 2C17 6 18 12 12 22C6 12 7 6 12 2z"/></svg></span>
+          <span class="hero-petal" style="right: -160px; top: 60px; animation-delay: -3s"><svg width="20" height="20" viewBox="0 0 24 24" fill="#D2C3EE"><path d="M12 2C17 6 18 12 12 22C6 12 7 6 12 2z"/></svg></span>
+          <span class="hero-petal" style="left: -130px; top: 150px; animation-delay: -5s"><svg width="16" height="16" viewBox="0 0 24 24" fill="#BFE3CB"><path d="M12 2C17 6 18 12 12 22C6 12 7 6 12 2z"/></svg></span>
+        </div>
+
+        <div class="candle">
+          <div class="dawn"></div>
+          <div class="halo"></div>
+          <div class="spark"></div>
+          <div class="flamebox">
+            <div class="flame-glow"></div>
+            <div class="flame"></div>
+            <div class="flame-core"></div>
+          </div>
+
+          <!-- Ilustración de línea fina: cada trazo con pathLength="1" se "dibuja" al cargar -->
+          <svg class="candle-art" width="220" height="300" viewBox="0 0 220 300" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <linearGradient id="oro" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ECD3A0"/>
+                <stop offset="1" stop-color="#C39A5C"/>
+              </linearGradient>
+              <linearGradient id="cera" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#FFFFFF" stop-opacity=".10"/>
+                <stop offset=".4" stop-color="#FFFFFF" stop-opacity=".22"/>
+                <stop offset="1" stop-color="#FFFFFF" stop-opacity=".06"/>
+              </linearGradient>
+              <radialGradient id="luzCera" cx=".5" cy="0" r=".9">
+                <stop offset="0" stop-color="#FFD9A0" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#FFD9A0" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Relleno suave de la cera y la luz de la llama dentro de ella -->
+            <path class="wax-fill" d="M74 148 V258 Q74 266 82 266 H138 Q146 266 146 258 V148 Z" fill="url(#cera)"/>
+            <path class="wax-light" d="M74 148 V210 H146 V148 Z" fill="url(#luzCera)"/>
+
+            <g stroke="url(#oro)" stroke-width="1.4">
+              <!-- Platito -->
+              <ellipse class="draw" pathLength="1" style="--d:.1s" cx="110" cy="272" rx="80" ry="13"/>
+              <ellipse class="draw" pathLength="1" style="--d:.2s" cx="110" cy="269" rx="60" ry="7"/>
+              <!-- Cuerpo de la vela y su borde superior -->
+              <path class="draw" pathLength="1" style="--d:.3s" d="M74 148 V258 Q74 266 82 266 H138 Q146 266 146 258 V148"/>
+              <ellipse class="draw" pathLength="1" style="--d:.45s" cx="110" cy="148" rx="36" ry="7"/>
+              <!-- Gotas de cera -->
+              <path class="draw" pathLength="1" style="--d:.6s" d="M78 153 C78 162 78 171 82 173 C86 175 87 166 87 160"/>
+              <path class="draw" pathLength="1" style="--d:.7s" d="M131 154 C131 163 132 180 136 180 C140 180 141 168 142 154"/>
+              <!-- Corazón, como en el logo de Vany Lights -->
+              <path class="draw" pathLength="1" style="--d:.8s" d="M110 222 C101 215 96 210 96 204 A7 7 0 0 1 110 201 A7 7 0 0 1 124 204 C124 210 119 215 110 222 Z"/>
+              <!-- Mecha -->
+              <path class="draw" pathLength="1" style="--d:.9s" d="M110 141 C110 136 111 133 110 128"/>
+              <!-- Humo que sube hasta una estrella -->
+              <path class="draw smoke" pathLength="1" style="--d:1.3s" d="M111 56 C126 44 96 36 108 24"/>
+              <path class="draw" pathLength="1" style="--d:1.5s" d="M108 6 L110 14 L118 16 L110 18 L108 26 L106 18 L98 16 L106 14 Z"/>
+              <!-- Luna -->
+              <path class="draw" pathLength="1" style="--d:1.2s" d="M184 36 A13 13 0 1 0 190 58 A10 10 0 1 1 184 36 Z"/>
+              <!-- Ramita a la izquierda -->
+              <path class="draw" pathLength="1" style="--d:.5s" d="M60 266 C50 228 46 190 62 150"/>
+              <path class="draw" pathLength="1" style="--d:.8s" d="M55 240 C41 238 36 228 38 220 C48 222 54 230 55 240 Z"/>
+              <path class="draw" pathLength="1" style="--d:.9s" d="M52 214 C64 210 70 200 68 192 C58 194 52 204 52 214 Z"/>
+              <path class="draw" pathLength="1" style="--d:1s" d="M51 190 C38 186 35 176 38 168 C47 172 51 180 51 190 Z"/>
+              <path class="draw" pathLength="1" style="--d:1.1s" d="M57 166 C68 160 72 150 69 143 C60 147 56 156 57 166 Z"/>
+              <!-- Florecita a la derecha -->
+              <path class="draw" pathLength="1" style="--d:.7s" d="M162 266 C168 246 172 232 170 216"/>
+              <path class="draw" pathLength="1" style="--d:1s" d="M170 210 C164 202 166 194 170 192 C174 194 176 202 170 210 Z M170 210 C178 204 186 206 186 211 C184 215 176 216 170 210 Z M170 210 C162 216 154 214 154 209 C156 205 164 204 170 210 Z"/>
+              <path class="draw" pathLength="1" style="--d:1.1s" d="M168 240 C176 234 182 236 183 240 C180 245 173 245 168 240 Z"/>
+            </g>
+            <!-- Estrellitas sueltas -->
+            <g fill="#E2C48E" class="tiny-stars">
+              <circle cx="40" cy="96" r="1.6"/><circle cx="186" cy="120" r="1.4"/>
+              <circle cx="30" cy="140" r="1.2"/><circle cx="196" cy="186" r="1.6"/><circle cx="150" cy="70" r="1.2"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hint fade-in" style="animation-delay: 2.6s" aria-hidden="true">Desliza para encender<i></i></div>
+    </section>
+
+    <!-- ===== 2. CAPÍTULOS DE COLOR (los arma home.js con los datos de data.js) ===== -->
+    <div id="colecciones"></div>
+
+    <!-- ===== 3. ASÍ LUCEN EN TUS CELEBRACIONES (muestras del trabajo, no se venden) ===== -->
+    <section class="celebrations" id="celebraciones" aria-labelledby="titulo-celebraciones">
+      <div class="container">
+        <div class="celebrations-head reveal">
+          <p class="eyebrow">Nuestro trabajo</p>
+          <h2 class="titulo" id="titulo-celebraciones">Así lucen en tus <span class="script">celebraciones</span></h2>
+          <p class="lead">Recuerdos hechos a la medida de cada evento: cumpleaños, baby showers y fechas especiales. Cada pedido se diseña contigo.</p>
+        </div>
+
+        <!-- home.js llena la galería con los datos de VL.GALLERY -->
+        <div class="gallery" id="galeria"></div>
+
+        <div class="celebrations-cta reveal">
+          <div>
+            <h3 class="serif">¿Quieres recuerdos para tu evento?</h3>
+            <p>Cuéntanos la fecha, la cantidad y la temática, y te enviamos una propuesta.</p>
+          </div>
+          <a class="btn btn-dark" target="_blank" rel="noopener"
+             href="https://wa.me/573222224048?text=Hola%20Vany%20Lights%2C%20quiero%20cotizar%20recuerdos%20para%20mi%20evento">Cotizar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="eyebrow">¿Una vela especial para alguien?</p>
+      <h2 class="footer-title">Escríbenos</h2>
+      <p>Hacemos recuerdos personalizados para cumpleaños, baby showers y celebraciones. Envíos nacionales desde Bogotá.</p>
+      <div class="footer-actions">
+        <a class="btn btn-rosa" href="https://wa.me/573222224048" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline-light" href="https://www.instagram.com/vany.lights/" target="_blank" rel="noopener">Instagram @vany.lights</a>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito</a>
+      </nav>
+      <p class="footer-small">© Vany Lights · Velas artesanales hechas a mano · Fotos propias</p>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript (al final, para que la página cargue primero) ===== -->
+  <!-- 1. Librería GSAP y su plugin ScrollTrigger -->
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <!-- 2. Datos de las velas -->
+  <script src="js/data.js"></script>
+  <!-- 3. Funciones comunes a todas las páginas -->
+  <script src="js/main.js"></script>
+  <!-- 4. Animaciones propias del inicio -->
+  <script src="js/home.js"></script>
+</body>
+</html>

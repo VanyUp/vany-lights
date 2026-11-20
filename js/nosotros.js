@@ -23,6 +23,10 @@ VL.initTilt(art);
 if (!VL.reduceMotion && window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 
+  // En iPhone la barra del navegador aparece y desaparece al hacer scroll;
+  // así ScrollTrigger no recalcula todo cada vez (evita saltos).
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
   const track = document.querySelector('.track');
 
   // Cuánto hay que mover la franja: su ancho total menos el ancho de la pantalla

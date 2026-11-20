@@ -97,7 +97,7 @@ VL.toast = function (message) {
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4C6D6" stroke-width="2.4"
          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>
     <span></span>
-    <a href="/html/carrito.html">Ver carrito</a>`;
+    <a href="carrito.html">Ver carrito</a>`;
   toast.querySelector('span').textContent = message;   // textContent: seguro contra código inyectado
   document.body.appendChild(toast);
 
@@ -229,7 +229,7 @@ VL.icons = {
 /* La escena 3D: arco + destellos + pedestal + vela.
    Si link es true, la vela es un enlace a su página de detalle. */
 VL.sceneHTML = function (p, line, { link = true, lazy = true } = {}) {
-  const img = `<img class="product-img" src="${p.img}" alt="${p.name}" width="${p.w}" height="${p.h}"${lazy ? ' loading="lazy"' : ''}>`;
+  const img = `<img class="product-img" src="${p.img}" alt="${p.name}" width="${p.w}" height="${p.h}"${lazy ? ' loading="lazy"' : ' fetchpriority="high"'}>`;
   return `
     <div class="scene">
       <div class="arch" style="background: linear-gradient(180deg, #FFFFFF 0%, ${line.glow} 30%, ${line.accent} 100%)" aria-hidden="true"></div>
@@ -242,7 +242,7 @@ VL.sceneHTML = function (p, line, { link = true, lazy = true } = {}) {
         <div class="podium-shadow"></div>
       </div>
       <div class="product-wrap">
-        ${link ? `<a class="product-link" href="/html/producto.html?id=${p.id}" aria-label="Ver detalle de ${p.name}">${img}</a>` : img}
+        ${link ? `<a class="product-link" href="producto.html?id=${p.id}" aria-label="Ver detalle de ${p.name}">${img}</a>` : img}
       </div>
     </div>`;
 };
@@ -253,12 +253,12 @@ VL.tileHTML = function (p, i = 0) {
   const line = VL.LINES[p.line];
   return `
     <article class="tile" style="background:${line.bg}; animation: tarjetaEntra .7s ${(i * 0.07).toFixed(2)}s backwards">
-      <a class="tile-link" href="/html/producto.html?id=${p.id}" aria-label="Ver detalle de ${p.name}"></a>
+      <a class="tile-link" href="producto.html?id=${p.id}" aria-label="Ver detalle de ${p.name}"></a>
       <img class="tile-img" src="${p.img}" alt="" width="${p.w}" height="${p.h}" loading="lazy">
       <div class="tile-info">
         <div>
           <span class="tile-line">${line.name}</span>
-          <h3><a href="/html/producto.html?id=${p.id}">${p.name}</a></h3>
+          <h3><a href="producto.html?id=${p.id}">${p.name}</a></h3>
           <span class="price">${VL.formatPrice(p.price)}</span>
         </div>
         <button class="mini" type="button" data-add="${p.id}" data-name="${p.name}" aria-label="Agregar ${p.name} al carrito">${VL.icons.plus}</button>
